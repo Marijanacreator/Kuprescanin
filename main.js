@@ -13,6 +13,11 @@ export async function createAmbientHero(hero, photos) {
     image.src = photo.image;
     image.style.objectPosition = photo.imagePosition || 'center';
     image.style.setProperty('--mobile-focal-point', photo.mobilePosition || photo.imagePosition || 'center');
+    image.style.setProperty('--phone-focal-point', photo.phonePosition || photo.mobilePosition || photo.imagePosition || 'center');
+    if (photo.phoneSubject !== undefined) {
+      image.dataset.phoneSubject = photo.phoneSubject;
+      image.dataset.phoneTarget = photo.phoneTarget;
+    }
     try { await image.decode(); return image; } catch { return null; }
   }));
   const images = prepared.filter(Boolean);

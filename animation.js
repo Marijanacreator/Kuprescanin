@@ -28,6 +28,21 @@ export class AmbientPhotography {
     this.updateMotion();
   }
   positionMask() {
+    if (matchMedia('(max-width: 430px)').matches) {
+      gsap.set(this.mask, { x: 0, force3D: true });
+      this.mask.style.setProperty('--mobile-photo-top', '0px');
+      this.mask.style.setProperty('--mobile-photo-height', `${this.hero.clientHeight}px`);
+      this.images.forEach(image => {
+        if (image.dataset.phoneSubject === undefined) return;
+        const coverWidth = Math.max(this.hero.clientWidth, this.hero.clientHeight * image.naturalWidth / image.naturalHeight);
+        const crop = coverWidth - this.hero.clientWidth;
+        if (crop > 0) {
+          const position = (coverWidth * Number(image.dataset.phoneSubject) - this.hero.clientWidth * Number(image.dataset.phoneTarget)) / crop;
+          image.style.setProperty('--phone-focal-point', `${position * 100}% 50%`);
+        }
+      });
+      return;
+    }
     const radius = this.mask.offsetWidth / 2;
     const centerY = this.mask.getBoundingClientRect().top - this.hero.getBoundingClientRect().top + radius;
     const dy = this.hero.clientHeight / 2 - centerY;

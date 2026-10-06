@@ -24,7 +24,7 @@ Otvorite http://127.0.0.1:4173/. Instalacija npm paketa nije potrebna. Koristite
 - gsap.min.js — lokalni GSAP runtime sa sačuvanim licencnim zaglavljem
 - server.cjs — lokalni pregled sajta
 
-Animacije poštuju prefers-reduced-motion. `mobile.css` sadrži dorade za širine do 800px: Hero koristi visinu zasnovanu na sadržaju i minimalnih 680px; fotografije ostaju u zakrivljenoj maski sa zasebnim mobilnim focal point vrednostima u `services.js`. Usluge koriste nativni horizontalni scroll/snap sa svim sadržajima i linkovima dostupnim. About fotografije zadržavaju preklapanje, a informacije se prikazuju u jednoj koloni. Desktop kompozicija i interakcije ostaju nepromenjene.
+Animacije poštuju prefers-reduced-motion. `mobile.css` sadrži dorade za širine do 800px: Hero do 430px koristi kompaktnu visinu zasnovanu na sadržaju, 64px prostora ispod CTA grupe i posebnu SVG krivu koja štiti tekst; širi mobilni/tablet prikaz zadržava minimalnih 680px; fotografije ostaju u zakrivljenoj maski sa zasebnim mobilnim focal point vrednostima u `services.js`. Usluge koriste nativni horizontalni scroll/snap sa svim sadržajima i linkovima dostupnim. About fotografije zadržavaju preklapanje, a informacije se prikazuju u jednoj koloni. Desktop kompozicija i interakcije ostaju nepromenjene.
 
 Lokalni `verify-mobile.cjs` proverava šest mobilnih dimenzija, geometriju, dostupnost linkova i responsive ponašanje. Testovi koriste Playwright/Edge runtime ovog računara i nisu potrebni za objavljivanje sajta.
 
@@ -33,3 +33,4 @@ Lokalni `verify-mobile.cjs` proverava šest mobilnih dimenzija, geometriju, dost
 Raspakujte arhivu i dodajte sadržaj foldera service-hero u koren GitHub repozitorijuma. Za GitHub Pages izaberite Settings → Pages → Deploy from a branch, željenu granu i / (root). Nije potreban build korak. Putanje do resursa su relativne i rade i kada se sajt objavljuje u podfolderu repozitorijuma.
 
 Kontakt linkovi trenutno koriste hello@example.com i treba ih zameniti stvarnim kontaktom pre javnog objavljivanja.
+

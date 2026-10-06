@@ -13,11 +13,12 @@ const output='C:/Users/Marijana/.codex/visualizations/2026/10/06/01a110c1-64ef-7
    return {width:document.documentElement.scrollWidth,hero:box(hero),headline:box(headline),headlineLine:parseFloat(getComputedStyle(headline).lineHeight),description:box(document.querySelector('.description')),buttons:[...document.querySelectorAll('.actions a')].map(box),images:[...document.querySelectorAll('.image-disc img')].map(box),cards:[...document.querySelectorAll('.service-panel')].map(box),snap:getComputedStyle(document.querySelector('.services-stack')).scrollSnapType,inert:[...document.querySelectorAll('.service-details')].some(e=>e.inert)};
   });
   assert.equal(layout.width,width,'overflow at '+width);
-  assert.equal(layout.hero.height,680);assert.ok(layout.headline.height<=layout.headlineLine*2+1,'headline wraps beyond two lines at '+width);
+  if(width<=430){assert.ok(layout.hero.height<620);assert.ok(layout.headline.top<250);}else assert.equal(layout.hero.height,680);
+  assert.ok(layout.headline.height<=layout.headlineLine*2+1,'headline wraps beyond two lines at '+width);
   assert.ok(layout.description.top>=layout.headline.bottom);
   assert.ok(layout.buttons.every(b=>b.height>=44&&b.left>=0&&b.right<=width));
   assert.ok(Math.abs(layout.hero.bottom-Math.max(...layout.buttons.map(b=>b.bottom))-64)<1);
-  assert.ok(layout.images.every(i=>Math.abs(i.top)<1&&i.height===layout.hero.height),'photos must fill hero height');
+  assert.ok(layout.images.every(i=>Math.abs(i.top)<1&&Math.abs(i.height-layout.hero.height)<1),'photos must fill hero height');
   assert.ok(layout.cards.every(c=>c.width<width));assert.equal(layout.snap,'x mandatory');assert.equal(layout.inert,false);
   assert.ok(Math.max(...layout.cards.map(c=>c.height))-Math.min(...layout.cards.map(c=>c.height))<1);
   await page.locator('.menu-toggle').tap();assert.equal(await page.locator('.navbar').isVisible(),true);await page.keyboard.press('Escape');
@@ -47,3 +48,4 @@ const output='C:/Users/Marijana/.codex/visualizations/2026/10/06/01a110c1-64ef-7
  await desktop.locator('.service-trigger').nth(2).hover();await desktop.waitForTimeout(250);assert.equal(await desktop.locator('.service-trigger[aria-expanded=true]').getAttribute('id'),'service-trigger-2');
  assert.deepEqual(errors,[]);await browser.close();console.log('PASS desktop hover and mobile console checks');
 })().catch(e=>{console.error(e);process.exit(1)});
+
