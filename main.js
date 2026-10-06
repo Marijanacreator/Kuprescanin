@@ -1,5 +1,5 @@
-import { serviceImages } from './services.js';
-import { AmbientPhotography } from './animation.js';
+import { serviceImages } from './services.js?v=phone-hero-20261006-2';
+import { AmbientPhotography } from './animation.js?v=phone-hero-20261006-2';
 import { createServiceShowcase } from './service-showcase.js';
 import { createAboutEntrance } from './about-section.js';
 
