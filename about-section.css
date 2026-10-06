@@ -1,0 +1,36 @@
+.about-section{position:relative;padding:64px 9% 120px;background:#fff;color:#102c40;scroll-margin-top:24px}
+.about-section::before{content:'';position:absolute;top:0;left:9%;right:9%;border-top:1px solid rgba(15,25,30,.10);pointer-events:none}
+.about-composition{display:grid;grid-template-columns:1fr 1fr;column-gap:7%;align-items:start}
+.about-composition h2{font-size:clamp(36px,4vw,58px);line-height:1.08;font-weight:400;letter-spacing:-1.8px;margin:24px 0 0}
+.about-photography{display:grid;grid-template-columns:1.35fr 1fr;gap:20px;align-items:start}
+.about-photo{margin:0;overflow:hidden}
+.about-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.about-photo-main{aspect-ratio:4/5;margin-top:24px}
+.about-photo-main img{object-position:56% 30%}
+.about-photo-detail{position:relative;z-index:1;left:-44px;aspect-ratio:1.15}
+.about-photo-detail img{object-position:50% 52%}
+.about-information{display:grid;grid-template-columns:1fr 1fr;column-gap:7%;border-top:1px solid rgba(15,25,30,.10);margin-top:56px;padding-top:44px}
+.about-identity{align-self:start;padding-top:3px}
+.about-label{display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:1.5px;margin:0 0 16px}
+.about-label span{width:5px;height:5px;background:var(--accent);flex-shrink:0}
+.about-company{font-size:clamp(23px,2vw,29px);font-weight:400;line-height:1.2;letter-spacing:-.5px;margin:0 0 9px}
+.about-specialties{font-size:12px;line-height:1.6;color:#102c40a6;margin:0}
+.about-statement{font-size:clamp(20px,1.9vw,28px);line-height:1.35;font-weight:400;letter-spacing:-.5px;margin:0;max-width:560px}
+/* Content remains visible without JavaScript or when reduced motion is enabled. */
+.about-section.is-prepared .about-reveal{opacity:0;transform:translateY(20px);transition:opacity 800ms cubic-bezier(.22,1,.36,1),transform 800ms cubic-bezier(.22,1,.36,1)}
+.about-section.is-visible .about-reveal{opacity:1;transform:none}
+.about-section.is-visible .about-photo-main{transition-delay:120ms}
+.about-section.is-visible .about-photo-detail{transition-delay:240ms}
+.about-section.is-visible .about-information{transition-delay:360ms}
+@media(max-width:1100px){.about-section{padding:56px 7% 100px}.about-section::before{left:7%;right:7%}.about-composition,.about-information{column-gap:6%}.about-photography{gap:14px}.about-photo-detail{left:-38px}.about-composition h2{font-size:clamp(32px,4vw,44px)}}
+@media(max-width:760px){
+ .about-section{padding:48px 7% 80px}
+ .about-composition{grid-template-columns:1fr;gap:40px}
+ .about-composition h2{font-size:clamp(27px,7vw,44px);letter-spacing:-1px;margin:0}
+ .about-photography{grid-template-columns:1fr;gap:28px}
+ .about-photo-main{margin-top:0;aspect-ratio:1}
+ .about-photo-detail{left:0;width:72%;justify-self:end;aspect-ratio:1.25}
+ .about-information{grid-template-columns:1fr;gap:24px;margin-top:40px;padding-top:28px}
+ .about-statement{font-size:22px;line-height:1.4;letter-spacing:-.4px}
+}
+@media(prefers-reduced-motion:reduce){.about-section.is-prepared .about-reveal{opacity:1;transform:none;transition:none}}

@@ -1,0 +1,52 @@
+/* Phone/small-tablet art direction. Approved desktop rules stay untouched. */
+.service-mobile-heading{display:none}
+@media(max-width:800px){
+ .hero{height:auto;min-height:680px;display:flex;flex-direction:column}
+ .masthead{position:relative;padding:20px 7%;gap:20px}
+ .wordmark img{width:clamp(104px,28vw,124px)}
+ .menu-toggle{min-height:44px;padding:11px 16px}
+ .navbar{top:calc(100% - 2px);left:7%;right:7%}
+ .navbar>a:not(.primary){min-height:44px;display:flex;align-items:center}
+ .content{position:relative;left:auto;top:auto;transform:none;width:86%;max-width:none;margin:auto 7% 0;padding:72px 0 64px}
+ .copy{margin:0}
+ .hero h1{height:auto;font-size:clamp(28px,8.8vw,44px);line-height:1.13;letter-spacing:-1px}
+ .hero .description{height:auto;max-width:360px;font-size:16px;line-height:1.55;margin:22px 0 24px}
+ .hero .actions{min-height:0;display:flex;flex-wrap:wrap;gap:12px;align-items:stretch}
+ .hero .actions a{min-height:50px;padding:14px 16px;font-size:13px;gap:12px;justify-content:center}
+ .image-disc{--diameter:max(210vw,1100px);--center-y:64%;--photo-width:72vw;top:calc(var(--center-y) - var(--diameter)/2)}
+ .image-disc img,.image-disc::before,.image-disc::after{top:var(--mobile-photo-top);height:var(--mobile-photo-height);width:var(--photo-width)}
+ .image-disc img{object-position:var(--mobile-focal-point,center)!important}
+ .image-disc::after{background:linear-gradient(90deg,rgba(9,29,43,.92),rgba(9,29,43,.82) 35vw,rgba(9,29,43,.25) 75vw)}
+ .services-section{padding:64px 7% 40px}
+ .services-intro{grid-template-columns:1fr;gap:22px;margin-bottom:32px}
+ .services-intro h2{font-size:clamp(30px,7.7vw,46px);letter-spacing:-1.2px}
+ .services-summary{font-size:15px;line-height:1.65;max-width:480px}
+ .services-stack{display:flex;flex-direction:row;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:7vw;padding:0 7vw 6px;margin:0 -7vw;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+ .services-stack::-webkit-scrollbar{display:none}
+ .service-panel,.service-panel+.service-panel{flex:0 0 min(84vw,400px);margin:0;padding:24px 24px 0;border-radius:20px;display:flex;flex-direction:column;scroll-snap-align:start;min-height:540px}
+ .service-trigger{display:none}
+ .service-mobile-heading{display:block;min-height:102px}
+ .service-mobile-heading .service-number{color:#b17b3d;display:block;margin-bottom:14px}
+ .service-mobile-heading h3{font-size:clamp(22px,5.7vw,27px);font-weight:500;line-height:1.15;letter-spacing:-.5px;margin:0}
+ .service-details,.service-panel.is-active .service-details{display:block;flex:1;transition:none}
+ .service-body{display:block;overflow:visible}
+ .service-body::after{display:none}
+ .service-text,.service-panel.is-active .service-text{width:100%;height:auto;padding:0;opacity:1;transform:none;transition:none;display:flex}
+ .service-text p{font-size:15px;line-height:1.6;min-height:120px;margin:0 0 12px;max-width:none}
+ .service-more{min-height:44px;font-size:13px;padding:12px 0;gap:18px}
+ .service-figure,.service-panel.is-active .service-figure{position:relative;flex-shrink:0;top:auto;left:auto;right:auto;bottom:auto;width:calc(100% + 48px);height:220px;margin:20px -24px 0;border-radius:0;opacity:1;clip-path:none;transition:none}
+ .service-figure img,.service-panel.is-active .service-figure img{transform:none;transition:none}
+ .about-section{padding:48px 7% 72px}
+ .about-composition{grid-template-columns:1fr;gap:32px}
+ .about-composition h2{font-size:clamp(28px,7vw,42px);margin:0;letter-spacing:-1px}
+ .about-photography{display:flex;flex-direction:column;gap:0}
+ .about-photo-main{width:90%;aspect-ratio:1;margin-top:0}
+ .about-photo-detail{left:0;width:54%;aspect-ratio:1.25;align-self:flex-end;margin-top:calc(-1 * clamp(24px,7vw,36px))}
+ .about-information{grid-template-columns:1fr;gap:28px;margin-top:36px;padding-top:28px}
+ .about-statement{font-size:clamp(21px,5.4vw,25px);line-height:1.4;letter-spacing:-.4px}
+ dialog{padding:32px 24px;max-height:calc(100dvh - 32px);overflow-y:auto}
+}
+@media(max-width:374px){
+ .hero .actions{flex-direction:column;align-items:flex-start}
+ .hero .actions a{min-width:190px}
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e9">
+  <title>Kupreščanin — Manje administracije. Više vremena za vas.</title>
+  <link rel="icon" type="image/png" href="./assets/logo%202.png">
+<link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./service-showcase.css">
+  <link rel="stylesheet" href="./about-section.css">
+  <link rel="stylesheet" href="./mobile.css">
+  <script src="./gsap.min.js"></script>
+  <script type="module" src="./main.js"></script>
+
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="Naše usluge">
+      <header class="masthead">
+        <a class="wordmark" href="./" aria-label="Kupreščanin — početna"><img src="./assets/logo%202.png" alt="Kupreščanin transport-logistika" width="1774" height="887"></a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-navigation">Meni <span aria-hidden="true">☰</span></button>
+        <nav id="main-navigation" class="navbar" aria-label="Glavna navigacija">
+          <a href="#usluge">Usluge</a>
+          <a href="#company-details" data-dialog>O nama</a>
+          <a href="#how-it-works" data-dialog>Kako funkcioniše</a>
+          <a href="mailto:hello@example.com">Kontakt</a>
+          <a class="primary nav-cta" href="mailto:hello@example.com">Kontaktirajte nas</a>
+        </nav>
+      </header>
+      <div class="image-disc" aria-hidden="true"><img src="./assets/hero%201.png" alt="" fetchpriority="high"></div>
+      <div class="content">
+        <div class="copy">
+          <h1>Manje administracije.<br>Više vremena za vas.</h1>
+          <p class="description">Od registracije i prenosa vlasništva do osiguranja i dokumentacije, sve završavate na jednom mestu.</p>
+          <div class="actions"><a class="primary" href="#usluge">Pogledajte usluge</a><a class="secondary" href="mailto:hello@example.com">Kontaktirajte nas <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="services-section" id="usluge" aria-labelledby="services-heading">
+      <div class="services-intro">
+        <div><p class="services-eyebrow">USLUGE</p><h2 id="services-heading">Sve za vaše vozilo.<br>Na jednom mestu.</h2></div>
+        <p class="services-summary">Od registracije i osiguranja do dokumentacije i prenosa vlasništva, potrebne usluge završavate jednostavno i na jednom mestu.</p>
+      </div>
+      <div class="services-stack"></div>
+    </section>
+    <section class="about-section" id="o-nama" aria-labelledby="about-heading">
+      <div class="about-composition">
+        <h2 id="about-heading" class="about-reveal">Znamo šta treba.<br>I kojim redom.</h2>
+        <div class="about-photography">
+          <figure class="about-photo about-photo-main about-reveal"><img src="./assets/about%20us.png" width="1268" height="1241" loading="lazy" decoding="async" alt="Objekat Kupreščanin sa tehničkim pregledom i perionicom"></figure>
+          <figure class="about-photo about-photo-detail about-reveal"><img src="./assets/about%20us%202.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Automobil na liniji tehničkog pregleda u objektu Kupreščanin"></figure>
+        </div>
+      </div>
+      <div class="about-information about-reveal">
+        <div class="about-identity">
+          <p class="about-label"><span aria-hidden="true"></span>O NAMA</p>
+          <p class="about-company">Kuprešanin</p>
+          <p class="about-specialties">Transport • logistika • tehnički pregled</p>
+        </div>
+        <p class="about-statement">Pomažemo vozačima da registraciju, osiguranje i administraciju oko vozila završe jednostavnije, bez obilaska više različitih mesta.</p>
+      </div>
+    </section>
+    <dialog id="service-details" aria-labelledby="service-dialog-heading"><button class="close-dialog" aria-label="Zatvori">×</button><h2 id="service-dialog-heading">Usluge</h2><p class="detail-copy"></p><a class="primary" href="mailto:hello@example.com">Kontaktirajte nas ↗</a></dialog>
+    <dialog id="company-details"><button class="close-dialog" aria-label="Zatvori">×</button><h2>O nama</h2><p class="detail-copy">Manje administracije. Više vremena za vas.</p><p class="detail-copy">Od registracije i prenosa vlasništva do osiguranja i dokumentacije, sve završavate na jednom mestu.</p></dialog>
+    <dialog id="how-it-works"><button class="close-dialog" aria-label="Zatvori">×</button><h2>Kako funkcioniše</h2><ol class="detail-copy"><li>Kontaktirajte nas.</li><li>Recite nam koja usluga vam je potrebna.</li><li>Dogovorite potrebnu dokumentaciju i sledeće korake.</li></ol><a class="primary" href="mailto:hello@example.com">Kontaktirajte nas ↗</a></dialog>
+  </main>
+
+</body>
+</html>
+
+
+
+
