@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f0e9">
+  <meta name="theme-color" content="#ffffff">
   <title>Kupreščanin — Manje administracije. Više vremena za vas.</title>
   <link rel="icon" type="image/png" href="./assets/logo%202.png">
 <link rel="stylesheet" href="./styles.css">
@@ -13,6 +13,22 @@
   <script src="./gsap.min.js"></script>
   <script type="module" src="./main.js?v=phone-hero-20261006-2"></script>
 
+  <style>
+    /* White Hero experiment; shared structure and behavior stay unchanged. */
+    .hero{background:#fff}
+    .hero .content,.hero .navbar>a:not(.primary){color:#1d3b42}
+    .hero .menu-toggle{color:#1d3b42;border-color:#1d3b4266}
+    .hero .image-disc::before{background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.6) 18%,rgba(255,255,255,.18) 50%,rgba(255,255,255,0) 85%)}
+    @media(max-width:1100px){.hero .navbar{background:#fff}}
+    .hero .description{color:#1d3b42d9}
+    .hero .secondary{border-color:#1d3b4266}
+    .hero .secondary:hover,.hero .secondary:focus-visible{background:#1d3b420d;border-color:#1d3b42b3}
+    .hero .image-disc::after{background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(255,255,255,.72) 15vw,rgba(255,255,255,0) 30vw)}
+    @media(max-width:800px){
+      .hero .image-disc::after{background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(255,255,255,.82) 35vw,rgba(255,255,255,.12) 75vw)}
+    }
+    .hero .image-disc::before,.hero .image-disc::after{display:none}
+  </style>
 </head>
 <body>
   <main>
@@ -68,6 +84,9 @@
 
 </body>
 </html>
+
+
+
 
 
 
